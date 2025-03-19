@@ -8,14 +8,28 @@ export function getCurrencyFaName(currency: string): string | null {
       return "pound";
     case "JPY":
       return "yen";
-    case "CNY":
-      return "renminbi";
     case "RUB":
       return "ruble";
     case "INR":
       return "rupee";
     case "ILS":
       return "shekel";
+    case "AUD":
+      return "dollar";
+    case "CAD":
+      return "dollar";
+    case "CHF":
+      return "franc";
+    case "KRW":
+      return "won";
+    case "BTC":
+      return "bitcoin";
+    case "LTC":
+      return "litecoin";
+    case "THB":
+      return "baht";
+    case "BRL":
+      return "brazilian-real";
     default:
       return null;
   }
