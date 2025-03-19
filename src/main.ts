@@ -35,7 +35,9 @@ export function getCurrencyFaName(currency: string): string | null {
   }
 }
 
-export function getCurrencyFaFullName(currency: string): string | null {
+export function getCurrencyFaFullName(
+  currency: string
+): `fa-${string}-sign` | null {
   const name = getCurrencyFaName(currency);
   if (name === null) {
     return null;
