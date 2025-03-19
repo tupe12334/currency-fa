@@ -71,4 +71,4 @@ Feel free to open an issue for any questions or concerns.
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the project's ISC license.
+By contributing, you agree that your contributions will be licensed under the project's MIT license.

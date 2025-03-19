@@ -76,7 +76,7 @@ Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTIN
 
 ## License
 
-[ISC License](LICENSE)
+[MIT License](LICENSE)
 
 ## Issues
 

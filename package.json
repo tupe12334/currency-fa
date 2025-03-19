@@ -23,7 +23,7 @@
     "iso-4217"
   ],
   "author": "Ofek Gabay <ofek.gabay.he@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@10.6.3",
   "devDependencies": {
     "@types/jest": "^29.5.11",
