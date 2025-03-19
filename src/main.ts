@@ -1,6 +1,9 @@
 export function getCurrencyFaName(currency: string): string | null {
   switch (currency) {
     case "USD":
+    case "HKD":
+    case "AUD":
+    case "CAD":
       return "dollar";
     case "EUR":
       return "euro";
@@ -14,10 +17,6 @@ export function getCurrencyFaName(currency: string): string | null {
       return "rupee";
     case "ILS":
       return "shekel";
-    case "AUD":
-      return "dollar";
-    case "CAD":
-      return "dollar";
     case "CHF":
       return "franc";
     case "KRW":
@@ -30,6 +29,7 @@ export function getCurrencyFaName(currency: string): string | null {
       return "baht";
     case "BRL":
       return "brazilian-real";
+    case "CNY":
     default:
       return null;
   }
