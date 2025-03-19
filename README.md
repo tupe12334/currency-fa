@@ -15,21 +15,22 @@ npm install currency-fa
 ## Usage
 
 ```javascript
-import { getCurrencyIcon } from 'currency-fa';
+import { getCurrencyIcon } from "currency-fa";
 
 // Get Font Awesome icon name for USD
-const usdIcon = getCurrencyIcon('USD'); // Returns 'fa-dollar-sign'
+const usdIcon = getCurrencyIcon("USD"); // Returns 'fa-dollar-sign'
 
 // Get Font Awesome icon name for EUR
-const eurIcon = getCurrencyIcon('EUR'); // Returns 'fa-euro-sign'
+const eurIcon = getCurrencyIcon("EUR"); // Returns 'fa-euro-sign'
 
 // Get Font Awesome icon name for GBP
-const gbpIcon = getCurrencyIcon('GBP'); // Returns 'fa-pound-sign'
+const gbpIcon = getCurrencyIcon("GBP"); // Returns 'fa-pound-sign'
 ```
 
 ## Supported Currencies
 
 The library supports major currencies including but not limited to:
+
 - USD (US Dollar)
 - EUR (Euro)
 - GBP (British Pound)
