@@ -8,6 +8,7 @@
     "dist"
   ],
   "scripts": {
+    "prebuild": "rimraf dist",
     "build": "tsc",
     "prepare": "npm run build"
   },
@@ -25,6 +26,7 @@
   "packageManager": "pnpm@10.6.3",
   "devDependencies": {
     "@types/node": "^22.13.10",
+    "rimraf": "^6.0.1",
     "typescript": "^5.8.2"
   }
 }
