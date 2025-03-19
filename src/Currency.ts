@@ -1,0 +1,18 @@
+export type Currency =
+  | "USD"
+  | "HKD"
+  | "AUD"
+  | "CAD"
+  | "EUR"
+  | "GBP"
+  | "JPY"
+  | "RUB"
+  | "INR"
+  | "ILS"
+  | "CHF"
+  | "KRW"
+  | "BTC"
+  | "LTC"
+  | "THB"
+  | "BRL"
+  | "CNY";

@@ -1,9 +1,11 @@
+import { Currency } from "./Currency";
+
 /**
  * Gets the Font Awesome currency name for a given currency code
- * @param {string} currency - The ISO 4217 currency code (e.g., "USD", "EUR")
+ * @param {Currency} currency - The ISO 4217 currency code (e.g., "USD", "EUR")
  * @returns {string | null} The Font Awesome name for the currency, or null if not supported
  */
-export function getCurrencyFaName(currency: string): string | null {
+export function getCurrencyFaName(currency: Currency): string | null {
   switch (currency) {
     case "USD":
     case "HKD":
@@ -35,7 +37,10 @@ export function getCurrencyFaName(currency: string): string | null {
     case "BRL":
       return "brazilian-real";
     case "CNY":
-    default:
       return null;
   }
+
+  // This assertion ensures that all cases are handled
+  const _exhaustiveCheck: never = currency;
+  return null;
 }
