@@ -1,6 +1,6 @@
 {
   "name": "currency-fa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ISO 4217 currency codes to fa icon name",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
