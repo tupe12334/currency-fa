@@ -1,4 +1,4 @@
-import { getCurrencyFaName, getCurrencyFaFullName } from '../src';
+import { getCurrencyFaName, getCurrencyFaFullName, Currency } from '../src';
 
 describe('getCurrencyFaName', () => {
   it('should return correct icon name for USD', () => {
@@ -14,14 +14,15 @@ describe('getCurrencyFaName', () => {
   });
 
   it('should handle multiple currencies that use dollar icon', () => {
-    ['USD', 'HKD', 'AUD', 'CAD'].forEach(currency => {
+    const dollarCurrencies: Currency[] = ['USD', 'HKD', 'AUD', 'CAD'];
+    dollarCurrencies.forEach(currency => {
       expect(getCurrencyFaName(currency)).toBe('dollar');
     });
   });
 
   it('should return null for unsupported currencies', () => {
     expect(getCurrencyFaName('CNY')).toBeNull();
-    expect(getCurrencyFaName('INVALID')).toBeNull();
+    expect(getCurrencyFaName('INVALID' as Currency)).toBeNull();
   });
 });
 
@@ -40,6 +41,6 @@ describe('getCurrencyFaFullName', () => {
 
   it('should return null for unsupported currencies', () => {
     expect(getCurrencyFaFullName('CNY')).toBeNull();
-    expect(getCurrencyFaFullName('INVALID')).toBeNull();
+    expect(getCurrencyFaFullName('INVALID' as Currency)).toBeNull();
   });
 });
