@@ -15,4 +15,19 @@ export default [
       'ddd/require-spec-file': 'off',
     },
   },
+  {
+    rules: {
+      // Forbid relying on the implicit truthiness of nullable strings, numbers
+      // and objects in boolean positions (`if (str)`, `a && b`, `!obj`,
+      // ternaries). Implicit coercion lets an empty string, `0`, `NaN` or
+      // `null` silently take the wrong branch — a class of bugs that
+      // disappears once every condition is an explicit comparison
+      // (`str.length > 0`, `x != null`). typescript-eslint deliberately leaves
+      // this out of its `strictTypeChecked` preset (which eslint-config-agent
+      // extends), so it must be enabled per-repo. `src` has no violations
+      // today, so the rule has zero current cost and guards against
+      // regressions as the library grows.
+      '@typescript-eslint/strict-boolean-expressions': 'error',
+    },
+  },
 ]
