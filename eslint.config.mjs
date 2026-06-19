@@ -22,6 +22,13 @@ export default [
       // dependency or side-effect), makes intent explicit, and is required for
       // TypeScript's `verbatimModuleSyntax`. Auto-fixable, so zero ongoing cost.
       '@typescript-eslint/consistent-type-imports': 'error',
+
+      // Require `export type` for re-exports that are only types. Keeps
+      // type-only exports out of the emitted JavaScript (no phantom runtime
+      // re-export), makes intent explicit, and is mandatory under TypeScript's
+      // `isolatedModules` / `verbatimModuleSyntax`. The natural sibling of the
+      // `consistent-type-imports` rule already enabled above. Auto-fixable.
+      '@typescript-eslint/consistent-type-exports': 'error',
     },
   },
   {
