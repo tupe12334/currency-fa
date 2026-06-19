@@ -39,4 +39,19 @@ export default [
       '@typescript-eslint/strict-boolean-expressions': 'error',
     },
   },
+  {
+    rules: {
+      // Flag conditions (if / ternary / && / || / ?.) whose outcome is already
+      // determined by the static types — e.g. testing a non-nullable value for
+      // `null`, or a branch the type system proves can never run. Such checks
+      // are dead code: they hide a wrong type annotation or a leftover guard,
+      // and mislead readers into thinking a case is still reachable. This
+      // type-aware rule is intentionally left out of typescript-eslint's
+      // `strictTypeChecked` preset (which eslint-config-agent extends), so it
+      // must be enabled per-repo. `src` has no violations today, so the rule
+      // is zero-cost now and keeps redundant guards from creeping in as the
+      // currency map grows.
+      '@typescript-eslint/no-unnecessary-condition': 'error',
+    },
+  },
 ]
