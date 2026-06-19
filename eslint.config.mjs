@@ -37,6 +37,20 @@ export default [
       // today, so the rule has zero current cost and guards against
       // regressions as the library grows.
       '@typescript-eslint/strict-boolean-expressions': 'error',
+
+      // Require explicit return and argument types on every exported
+      // ("module boundary") function. This is a published library, so these
+      // signatures ARE the public API: an explicit annotation pins the
+      // contract instead of letting it silently widen/narrow as the
+      // implementation changes (e.g. a refactor that accidentally returns
+      // `string | undefined` instead of `string | null`). It also speeds up
+      // type-checking for consumers and makes generated `.d.ts` output
+      // deterministic. typescript-eslint leaves this off in `strictTypeChecked`
+      // (which eslint-config-agent extends), so it must be enabled per-repo.
+      // Every exported function in `src` already carries explicit signatures,
+      // so the rule has zero current cost and guards the API surface against
+      // regressions.
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
     },
   },
 ]
