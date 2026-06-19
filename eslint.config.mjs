@@ -39,4 +39,20 @@ export default [
       '@typescript-eslint/strict-boolean-expressions': 'error',
     },
   },
+  {
+    rules: {
+      // Forbid the non-null assertion operator (`x!`). A `!` silences the
+      // compiler's null/undefined check without any runtime guard, so a value
+      // that is actually `null`/`undefined` slips straight through to a
+      // "Cannot read properties of null" crash at runtime — the exact failure
+      // the type system was meant to prevent. Forbidding it forces an explicit
+      // narrowing (`if (x != null)`), a default (`x ?? fallback`) or an honest
+      // throw, all of which fail loudly and locally instead of far away. This
+      // is not part of typescript-eslint's `strictTypeChecked` preset (which
+      // eslint-config-agent extends), so it must be enabled per-repo. `src`
+      // has zero `!` assertions today, so the rule has no current cost and
+      // guards against the pattern creeping in as the library grows.
+      '@typescript-eslint/no-non-null-assertion': 'error',
+    },
+  },
 ]
