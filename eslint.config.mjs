@@ -13,6 +13,12 @@ export default [
       // not fit the existing layout. Every public function is covered by
       // __tests__/currency.test.ts.
       'ddd/require-spec-file': 'off',
+
+      // Currency mapping is driven by `switch` statements over the `Currency`
+      // union. This type-aware rule fails the build when a new currency code is
+      // added to the union but its `case` is forgotten, giving a linter-enforced
+      // guarantee alongside the hand-written `never` exhaustiveness assertion.
+      '@typescript-eslint/switch-exhaustiveness-check': 'error',
     },
   },
 ]
