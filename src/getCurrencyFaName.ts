@@ -1,4 +1,4 @@
-import { Currency } from "./Currency";
+import type { Currency } from "./Currency";
 
 /**
  * Gets the Font Awesome currency name for a given currency code

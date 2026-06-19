@@ -13,6 +13,11 @@ export default [
       // not fit the existing layout. Every public function is covered by
       // __tests__/currency.test.ts.
       'ddd/require-spec-file': 'off',
+      // Force `import type` for imports used only as types. Keeps type-only
+      // imports out of the emitted JS (smaller output, no accidental runtime
+      // dependency or side-effect), makes intent explicit, and is required for
+      // TypeScript's `verbatimModuleSyntax`. Auto-fixable, so zero ongoing cost.
+      '@typescript-eslint/consistent-type-imports': 'error',
     },
   },
 ]
