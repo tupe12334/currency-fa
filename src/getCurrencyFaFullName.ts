@@ -1,4 +1,4 @@
-import { Currency } from "./Currency";
+import type { Currency } from "./Currency";
 import { getCurrencyFaName } from "./getCurrencyFaName";
 
 /**
