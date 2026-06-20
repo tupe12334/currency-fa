@@ -91,4 +91,20 @@ export default [
       '@typescript-eslint/no-non-null-assertion': 'error',
     },
   },
+  {
+    rules: {
+      // Require a compare callback for every `Array.prototype.sort` /
+      // `toSorted` call. Without one, `sort` coerces elements to strings and
+      // orders them by UTF-16 code unit, so `[1, 10, 2].sort()` yields
+      // `[1, 10, 2]` (not `[1, 2, 10]`) — a silent correctness bug that only
+      // shows up on specific data. Forcing an explicit comparator
+      // (`(a, b) => a - b`, `a.localeCompare(b)`) makes the intended ordering
+      // visible and correct. This type-aware rule is not part of
+      // typescript-eslint's `strictTypeChecked` preset (which
+      // eslint-config-agent extends), so it must be enabled per-repo. `src`
+      // has no `sort` calls today, so the rule is zero-cost now and guards
+      // against the footgun as the currency data grows.
+      '@typescript-eslint/require-array-sort-compare': 'error',
+    },
+  },
 ]
