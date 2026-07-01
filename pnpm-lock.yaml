@@ -14,6 +14,9 @@ importers:
       '@types/node':
         specifier: ^22.13.10
         version: 22.13.10
+      block-no-verify:
+        specifier: ^1.3.0
+        version: 1.3.0
       eslint:
         specifier: ^9.39.4
         version: 9.39.4
@@ -775,6 +778,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@polyhook/sdk@0.1.11':
+    resolution: {integrity: sha512-Tb8NJ6oYxEwWAlsC0R/PFDIxMjYyXsZQOwSjoMD0eEPppyf1BtNfcZO1oSXxM2eQsEynlpOXr6cDku9B7KUSSQ==}
+    engines: {node: '>=18'}
+
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
 
@@ -1223,6 +1230,11 @@ packages:
   balanced-match@4.0.4:
     resolution: {integrity: sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==}
     engines: {node: 18 || 20 || >=22}
+
+  block-no-verify@1.3.0:
+    resolution: {integrity: sha512-pUEt/KwRe2Uu5abvSZwaA8J6FCcNqjy+IebPW6DAgag81NmqUnCxd63ueivAa8L3f1bYL0dMXJ9WgJ2uyg1ZvA==}
+    engines: {node: '>=20.0.0'}
+    hasBin: true
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -3964,6 +3976,8 @@ snapshots:
   '@oxc-resolver/binding-win32-x64-msvc@11.21.3':
     optional: true
 
+  '@polyhook/sdk@0.1.11': {}
+
   '@rtsao/scc@1.1.0': {}
 
   '@sinclair/typebox@0.27.8': {}
@@ -4494,6 +4508,10 @@ snapshots:
   balanced-match@1.0.2: {}
 
   balanced-match@4.0.4: {}
+
+  block-no-verify@1.3.0:
+    dependencies:
+      '@polyhook/sdk': 0.1.11
 
   brace-expansion@1.1.11:
     dependencies:
